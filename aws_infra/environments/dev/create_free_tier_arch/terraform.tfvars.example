@@ -6,7 +6,7 @@ project           = "your-project"        # 예: "myapp", "dev-api", "prod-web"
 domain_name       = "your-domain.com"     # 예: "example.com", "mycompany.com"
 
 # EC2 설정
-ec2_ami           = "ami-xxxxxxxxxxxxxxxxx"
+ec2_ami           = "ami-xxxxxxxxxxxxxxxxx" # 예: "ami-0c9c942bd7bf113a2"
 ec2_instance_type = "t3.micro"
 
 # RDS 설정
