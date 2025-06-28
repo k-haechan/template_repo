@@ -43,12 +43,11 @@ Secrets는 [Settings > Secrets and variables > Actions](../../settings/secrets/a
 - **main 브랜치**: 운영 환경 배포
 
 ## 현재 브랜치별 환경 매핑
-```
+
 | 브랜치 | 환경 | 목적           |
 |--------|------|----------------|
 | dev    | 개발 | 개발자 테스트   |
 | main   | 운영 | 실제 서비스     |
-```
 
 ## 현재 배포 파이프라인
 ```
