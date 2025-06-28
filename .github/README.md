@@ -4,9 +4,7 @@
 
 | 이름 | 설명 |
 |------|------|
-| `SONAR_TOKEN` | SonarCloud 분석 토큰 |
 | `SLACK_WEBHOOK_URL` | 슬랙 알림용 Webhook 주소 (PR 알림) |
-| `SLACK_PUSH_WEBHOOK_URL` | 슬랙 알림용 Webhook 주소 (Push 알림) |
 | `AWS_ACCOUNT_ID` | AWS 계정 ID (OIDC 인증용) |
 | `ENV_FILE` | 애플리케이션 환경변수 파일 내용 |
 
@@ -20,7 +18,7 @@ Secrets는 [Settings > Secrets and variables > Actions](../../settings/secrets/a
 |------|--------|------|
 | `dev-pr.yml` | `pull_request` to `dev` | 빌드 & 자코코 테스트 |
 | `dev-push.yml` | `push` to `dev` | 빌드 & 자코코 테스트 |
-| `main-pr.yml` | `pull_request` to `main` | 빌드, 자코코, SonarCloud, CodeQL |
+| `main-pr.yml` | `pull_request` to `main` | 빌드, 자코코, CodeQL |
 | `main-push.yml` | `pull_request` to `main` (merged) | 버전 태깅, Docker 빌드, AWS 배포 |
 
 ---
