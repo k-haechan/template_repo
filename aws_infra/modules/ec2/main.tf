@@ -28,15 +28,23 @@ resource "aws_iam_instance_profile" "profile" {
 locals {
   user_data = <<-EOF
     #!/bin/bash
-    sudo dd if=/dev/zero of=/swapfile bs=128M count=32
+    # 4GB 스왑 생성
+    sudo fallocate -l 4G /swapfile
     sudo chmod 600 /swapfile
     sudo mkswap /swapfile
     sudo swapon /swapfile
-    echo '/swapfile swap swap defaults 0 0' | sudo tee -a /etc/fstab
-    yum install docker -y
-    systemctl enable docker
-    systemctl start docker
-    docker network create common
+    echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+
+    # Docker 설치 (Ubuntu 기준)
+    sudo apt-get update -y
+    sudo apt-get install -y docker.io
+
+    # Docker 자동 시작 설정
+    sudo systemctl enable docker
+    sudo systemctl start docker
+
+    # Docker 네트워크 생성
+    sudo docker network create common
   EOF
 }
 
